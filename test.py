@@ -1,7 +1,7 @@
 from google import genai
 
 # The client gets the API key from the environment variable `GEMINI_API_KEY`.
-client = genai.Client(api_key="AIzaSyAZ4ONtz2pgQSuXzblNoT5xL3KT-o4ebaQ")
+client = genai.Client(api_key="api_key")
 sys_instruction = (
     "You are an assistant specialized in generating Blender Python (`bpy`) scripts from 3D model descriptions.",
     "Your task is to take a user prompt describing a 3D object or scene and output clean, modular, and executable Python code using the Blender API (`bpy`) compatible with Blender 2.80.",
@@ -60,6 +60,7 @@ response = client.models.generate_content(
     contents=ris_con
 )
 print(response.text)
+
 
 
 #black hole promt : "Create a highly detailed 3D black hole scene:\n- Central black sphere representing the singularity, perfectly smooth and absorbing all light.\n- Surrounding accretion disk: a glowing, swirling disk of plasma with bright orange, yellow, and red colors, slightly warped as if being pulled by gravity.\n- Add relativistic effects: light bending around the black hole, creating a faint gravitational lensing halo.\n- Include scattered cosmic dust and small glowing particles orbiting around the disk.\n- Background: deep space with subtle stars, pure black environment to emphasize contrast.\n- Lighting: strong emission from the accretion disk, no external light sources, realistic glow illuminating nearby particles.\n- Camera angle: slightly tilted above the disk, showing both the black hole core and the glowing swirl.\n- Style: cinematic, high contrast, physically inspired but artistically enhanced for dramatic effect."
