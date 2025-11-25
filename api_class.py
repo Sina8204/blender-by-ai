@@ -2,7 +2,6 @@ from google import genai
 import tkinter as tk
 from tkinter import messagebox
 
-#"AIzaSyBJv7g6nHK3GE0kIj2JzPgrCO3nXMil3N8"
 class wait:
     def __init__(self, root):
         self.root = root
@@ -47,4 +46,5 @@ class models :
         try:
             return self.response_text
         except Exception as e:
+
             return f"Error : {e}"
