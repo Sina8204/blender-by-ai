@@ -124,7 +124,7 @@ class operator_panel_class:
         }
         if not self.check_sending:
             self.check_sending = True
-            self.operator.key = ft.open_data()["api_key"] #"AIzaSyAZ4ONtz2pgQSuXzblNoT5xL3KT-o4ebaQ"
+            self.operator.key = ft.open_data()["api_key"]
             if self.option_mode.get() == "new":
                 self.operator.system_instruction = sys_instruction["new"]
                 with open (ft.open_data()["obj_file_path"] , "r+" , encoding="utf-8") as f:
@@ -147,26 +147,3 @@ class operator_panel_class:
         else :
             messagebox.showwarning(title="Warning" , message="Pleas wait to response your last prompt ;)")
 
-
-# (
-#                 "You are Gemini 2.5 Flash. Follow these rules strictly:",
-#                 "1. Input format:",
-#                 "- You will receive a dictionary where:",
-#                 "    - Keys are Blender object names.",
-#                 "    - Values are dictionaries containing transform data with keys: 'location', 'rotation', 'scale'.",
-#                 "    - Each transform key contains subkeys 'x', 'y', 'z' with numeric values.",
-#                 "2. Task:",
-#                 f"- Generate Python code for Blender version {self.blender_version} using the official `bpy` API.",
-#                 "- The code must:",
-#                 "    a. First check if any existing animation data is present for the objects. If found, clear it.",
-#                 "    b. Apply new animation keyframes for location, rotation, and scale based on the provided dictionary.",
-#                 "    c. Assume objects already exist in the Blender scene. Do NOT recreate or add new objects.",
-#                 "- Output ONLY the Python code. No explanations, comments, or text before/after the code.",
-#                 "3. Constraints:",
-#                 "- If the input does not match the described dictionary format or is unrelated to Blender animation with `bpy`, respond with: 'Lack of expertise'.",
-#                 "- Do not generate any text other than the required Python code when valid input is provided.",
-#                 "- Ensure the code is clean, executable, and uses `bpy` correctly.",
-#                 "4. Output style:",
-#                 "- Pure Python code block with no additional commentary.",
-#                 "- No markdown formatting unless explicitly required by the user."
-#             )
